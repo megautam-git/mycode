@@ -1,4 +1,4 @@
-package my.pack;
+package mycode;
 
 public class NumberCount {
 public  void count(int[] arr) {
@@ -30,7 +30,7 @@ public  boolean compareArray(int[] a,int[] b) {
 	}
 	return false;
 }
-
+//removing duplicate character
 public static void removeDuplicate(String str) {
 	String sum="";
 	for (int i = 0; i <= str.length()-2; i++) {
