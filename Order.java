@@ -1,3 +1,6 @@
+import java.util.Map;
+import java.util.TreeMap;
+
 /* 
 problem description
 Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
@@ -18,22 +21,20 @@ public class Order {
       String word="";
       String[] arr=words.split(" ");
        int num=0;
+       Map<Integer,String> map=new TreeMap<>();
       for(int i=0;i<arr.length;i++){
            char[] ch=arr[i].toCharArray();
-           if(Character.isDigit(ch[i])){
-            num=ch[i];
-            for(int j=0;j<ch.length;j++){
-                if( num>ch[i]){
-                    num=ch[j];
-                }
-                word+=ch[j];
-            }
-              
-               
-            
+           for (int j = 0; j < ch.length; j++) {
+            if(Character.isDigit(ch[j])){
+                num=(int)ch[j];
+                map.put(num, arr[i]);
+                } 
            }
+        
           
-           sentence+=word;
+      }
+      for(Map.Entry<Integer,String> m:map.entrySet()){
+          sentence+=m.getValue()+" ";
       }
       
         return sentence;
